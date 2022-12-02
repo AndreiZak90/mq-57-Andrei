@@ -17,6 +17,13 @@
               alt="логотип"
               class="menu__logo__img"
           /></a>
+          <div class="burger__box">
+            <div class="burger">
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+            </div>
+          </div>
           <nav class="menu__nav__list">
             <ul class="nav__list">
               <li class="list__item">
@@ -46,12 +53,7 @@
     <div class="now_trend">
       <h2 class="title__centr">сейчас в тренде</h2>
       <div class="trend__gallary">
-        <div class="gallary__box">
-          <img
-            src="../img/trend1.jpg"
-            alt="фото растений"
-            class="gallary__img img"
-          />
+        <div class="gallary__box box__one">
           <div class="gallary__block">
             <div class="gallary__block__category">
               <a href="#0" class="category__link">lifestyle</a>
@@ -62,12 +64,7 @@
             </h3>
           </div>
         </div>
-        <div class="gallary__box">
-          <img
-            src="/img/trend2.jpg"
-            alt="фото растений"
-            class="gallary__img img"
-          />
+        <div class="gallary__box box__two">
           <div class="gallary__block">
             <div class="gallary__block__category">
               <a href="#0" class="category__link">food</a>
@@ -77,12 +74,7 @@
             </h3>
           </div>
         </div>
-        <div class="gallary__box">
-          <img
-            src="/img/trend3.jpg"
-            alt="фото растений"
-            class="gallary__img img"
-          />
+        <div class="gallary__box box__free">
           <div class="gallary__block">
             <div class="gallary__block__category">
               <a href="#0" class="category__link">lifestyle</a>
@@ -93,12 +85,7 @@
             </h3>
           </div>
         </div>
-        <div class="gallary__box">
-          <img
-            src="/img/trend4.jpg"
-            alt="фото растений"
-            class="gallary__img img"
-          />
+        <div class="gallary__box box__four">
           <div class="gallary__block">
             <div class="gallary__block__category">
               <a href="#0" class="category__link">food</a>
@@ -462,10 +449,7 @@
                   media="(min-width: 768px)"
                   srcset="/img/shop-item-tablet2.jpg"
                 />
-                <img
-                  src="/img/shop-item-mobile2.jpg"
-                  alt="подушка с надписью"
-                />
+                <img src="/img/shop-item-mobile2.jpg" alt="Кукла «Зайчик»" />
               </picture>
               <div class="card__border">
                 <h3 class="card__title">Кукла «Зайчик»</h3>
@@ -497,7 +481,7 @@
                 />
                 <img
                   src="/img/shop-item-mobile3.jpg"
-                  alt="подушка с надписью"
+                  alt="Шестиугольная рамка"
                 />
               </picture>
               <div class="card__border">
@@ -544,9 +528,20 @@
         <div class="main_box">
           <h2 class="title__centr form__title">ваш фидбек</h2>
           <form class="form__box">
+            <button class="button__close">
+              <img
+                src="/img/form-x.svg"
+                alt="крестик"
+                class="button__close__img"
+              />
+            </button>
             <div class="form__frequency">
               <span class="frequency_text">Как часто вы заходите на сайт?</span>
-              <select class="frequency__field" name="Почти каждый день">
+              <select
+                class="frequency__field"
+                name="Почти каждый день"
+                required
+              >
                 <option class="frequency__field__item" value="">
                   Почти каждый день
                 </option>
@@ -570,6 +565,7 @@
                     name="button__choice"
                     class="button__choice_dots"
                     checked
+                    required
                   />
                   <span class="radio_button_text">да</span>
                 </label>
@@ -578,6 +574,7 @@
                     type="radio"
                     name="button__choice"
                     class="button__choice_dots"
+                    required
                   />
                   <span class="radio_button_text">нет</span>
                 </label>
@@ -591,7 +588,8 @@
               <textarea
                 class="textarea"
                 placeholder="Может, больше рецептов?"
-                rows="4"
+                rows="6"
+                required
               ></textarea>
             </div>
             <button class="form__button">отправить</button>

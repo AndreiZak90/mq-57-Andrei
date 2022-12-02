@@ -105,6 +105,24 @@ input:focus {
   width: 185px;
 }
 
+.burger__box {
+  display: none;
+  cursor: pointer;
+}
+
+.burger {
+  width: 23px;
+  height: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger__line {
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
 .nav__list {
   height: 35px;
   display: flex;
@@ -165,22 +183,35 @@ input:focus {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-}
-
-.gallary__img {
-  width: 100%;
-  height: 100%;
+  flex-shrink: 0;
 }
 
 .gallary__box {
   position: relative;
-  max-width: 24.6%;
+  min-width: 24.7%;
+  height: 320px;
+
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+  background-repeat: no-repeat;
+}
+
+.gallary__box::before {
+  content: "";
+  background-color: #fff;
+  opacity: 0.1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .gallary__box::after {
   position: absolute;
   content: "";
-  opacity: 0.6;
   background-color: #0f0d0e;
   top: 0;
   left: 0;
@@ -188,6 +219,22 @@ input:focus {
   height: 100%;
   opacity: 0.6;
   z-index: 1;
+}
+
+.box__one {
+  background-image: url(/img/trend1.jpg);
+}
+
+.box__two {
+  background-image: url(/img/trend2.jpg);
+}
+
+.box__free {
+  background-image: url(/img/trend3.jpg);
+}
+
+.box__four {
+  background-image: url(/img/trend4.jpg);
 }
 
 .gallary__block {
@@ -634,12 +681,23 @@ input:focus {
 }
 
 .main_box {
-  position: absolute;
-  top: 240px;
-  left: 35%;
-  right: 35%;
+  position: fixed;
+  transform: translate(-195px, -50%);
+  width: 390px;
+  top: 50%;
+  left: 50%;
   background: #fff;
   padding: 55px 30px;
+}
+
+.button__close {
+  position: absolute;
+  width: 20px;
+  cursor: pointer;
+  right: 0;
+  top: -26px;
+  border: none;
+  background-color: transparent;
 }
 
 .form__title {
@@ -663,8 +721,7 @@ input:focus {
 }
 
 .frequency__field {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   height: 45px;
   border: none;
   background-color: #f4f7f6;
@@ -717,6 +774,10 @@ input:focus {
   flex-direction: column;
 }
 
+.area__text {
+  margin-bottom: 11px;
+}
+
 .textarea {
   max-width: 100%;
   border: none;
@@ -726,6 +787,10 @@ input:focus {
 .textarea:focus {
   border: none;
   border-bottom: 1px solid #b59f5b;
+}
+
+.textarea::placeholder {
+  padding: 20px;
 }
 
 .form__button {
@@ -738,4 +803,129 @@ input:focus {
   text-transform: uppercase;
   padding: 20px auto;
   cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .header {
+    background-image: url(/img/banner-bg-tablet.jpg);
+  }
+
+  .menu__nav__list {
+    display: none;
+  }
+
+  .burger__box {
+    display: block;
+  }
+
+  .header__title {
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  .title__centr {
+    font-size: 18px;
+  }
+
+  .trend__gallary {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .gallary__box {
+    flex-grow: 1;
+    min-width: 49.5%;
+    max-height: 100%;
+  }
+
+  .gallary__block__title {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .news {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .news__box {
+    flex-direction: column;
+  }
+
+  .news__box::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    border-bottom: 3px solid #eeeeee;
+    margin-top: 22px;
+  }
+
+  .shop__block {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 700px;
+  }
+
+  .shop__card {
+    margin-bottom: 30px;
+  }
+
+  .card__title {
+    font-size: 17px;
+    margin-top: 41px;
+  }
+
+  .card__text {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    background-image: url(/img/banner-mobile.jpg);
+    bottom: 640px;
+  }
+
+  .info__news {
+    position: relative;
+  }
+
+  .burger__box {
+    position: absolute;
+    top: 30px;
+    right: 14px;
+  }
+
+  .menu__logo {
+    position: absolute;
+    top: 240px;
+    left: 24%;
+    right: 24%;
+  }
+
+  .menu__logo__img {
+    width: 270px;
+  }
+
+  .header__title {
+    margin-top: 330px;
+    margin-left: 27px;
+    margin-right: 27px;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .info__news {
+    flex-direction: column;
+  }
+
+  .news {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .additions {
+    margin: 0 auto;
+  }
 }
